@@ -1,0 +1,83 @@
+openapi: 3.0.4
+info:
+  title: Paraphrase
+  description: >-
+    Paraphrase is a tool for rewriting text while preserving its original
+    meaning. It helps create alternative versions of content for various
+    purposes.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/paraphrase:
+    post:
+      summary: Paraphrase Text
+      description: Rewrite the provided text with alternative phrasing
+      operationId: paraphrase
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  original: The quick brown fox jumps over the lazy dog.
+                  paraphrased: A swift auburn fox leaps above an idle canine.
+                  style: formal
+                  originalWords: 9
+                  paraphrasedWords: 8
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  description: The text to paraphrase
+                style:
+                  type: string
+                  description: 'Paraphrase style: formal, casual, simple, or creative'
+              required:
+                - text
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
+sampleRequest:
+  text: The quick brown fox jumps over the lazy dog.
+  style: formal
