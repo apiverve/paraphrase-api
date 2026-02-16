@@ -44,7 +44,10 @@ from apiverve_paraphrase.apiClient import ParaphraseAPIClient
 # Initialize the client with your APIVerve API key
 api = ParaphraseAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
 ```
 
 ###### Simple Request
@@ -124,7 +130,10 @@ from apiverve_paraphrase.apiClient import ParaphraseAPIClient, ParaphraseAPIClie
 
 api = ParaphraseAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +154,10 @@ from apiverve_paraphrase.apiClient import ParaphraseAPIClient, ParaphraseAPIClie
 
 api = ParaphraseAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +191,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_paraphrase.apiClient import ParaphraseAPIClient, ParaphraseAPIClientError
 
-query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
 
 # Using context manager ensures proper cleanup
 with ParaphraseAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +220,10 @@ from apiverve_paraphrase.apiClient import ParaphraseAPIClient
 # Enable debug mode
 api = ParaphraseAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,8 +238,12 @@ from apiverve_paraphrase.apiClient import ParaphraseAPIClient
 
 api = ParaphraseAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "style": "formal"
+}
+
 try:
-    query = { "text": "The quick brown fox jumps over the lazy dog.", "style": "formal" }
     result = api.execute(query)
     print(result)
 finally:
