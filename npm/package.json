@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/paraphrase",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Paraphrase is a tool for rewriting text while preserving its original meaning. It helps create alternative versions of content for various purposes.",
   "main": "index.js",
   "types": "index.d.ts",
